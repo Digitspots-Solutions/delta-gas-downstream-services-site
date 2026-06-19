@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Gas Downstream Services | Reliable LPG Distribution in Delta State</title>
+    <meta name="description" content="Licensed gas distributor in Delta State. 24/7 LPG supply, residential & industrial. DPR certified. Serving Warri, Effurun, Uvwie since 2013.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #B45309;
+            --color-accent: #1E293B;
+            --color-bg: #0A0A0F;
+            --color-text: #E2E8F0;
+            --color-surface: #111118;
+            --font-display: 'Inter', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --radius: 4px;
+            --section-padding: 48px;
+            --container-max: 1200px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (min-width: 768px) {
+            :root {
+                --section-padding: 80px;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            color: var(--color-text);
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.1);
+        }
+
+        .nav-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--color-primary), #D97706);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .nav-menu {
+            display: none;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex;
+            }
+        }
+
+        .nav-menu a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--color-primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #D97706;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(180, 83, 9, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--color-primary);
+            background: rgba(180, 83, 9, 0.1);
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: #fff;
+            transition: var(--transition);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--color-surface);
+            padding: 5rem 2rem 2rem;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-menu a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Section */
+        section {
+            padding: var(--section-padding) 0;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            align-items: center;
+            position: relative;
+            padding-top: calc(var(--section-padding) + 60px);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.95), rgba(30, 41, 59, 0.85));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-tagline {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(180, 83, 9, 0.2);
+            border: 1px solid var(--color-primary);
+            border-radius: 50px;
+            color: var(--color-primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-title {
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-description {
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+            margin-bottom: 2.5rem;
+            color: rgba(226, 232, 240, 0.9);
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(226, 232, 240, 0.1);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            border-color: var(--color-primary);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--color-text);
+            opacity: 0.8;
+        }
+
+        /* Services Grid */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-subtitle {
+            color: var(--color-primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(226, 232, 240, 0.1);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+            border-color: var(--color-primary);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--color-primary), #D97706);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: rgba(226, 232, 240, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 10, 15, 0.9), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .image-caption {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Split Section */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .split-section {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .split-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .split-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .split-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Features List */
+        .features-list {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text p {
+            font-size: 0.95rem;
+            color: rgba(226, 232, 240, 0.8);
+            margin: 0;
+        }
+
+        /* Certifications */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cert-badge {
+            background: var(--color-surface);
+            border: 2px solid rgba(226, 232, 240, 0.1);
+            border-radius: var(--radius);
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .cert-badge:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+        }
+
+        .cert-logo {
+            width: 64px;
+            height: 64px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(226, 232, 240, 0.1);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+            border-color: var(--color-primary);
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--color-primary);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .author-info h5 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            color: rgba(226, 232, 240, 0.6);
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.25rem;
+            color: #fff;
+        }
+
+        .contact-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: rgba(226, 232, 240, 0.8);
+            margin: 0;
+        }
+
+        .contact-details a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: #D97706;
+        }
+
+        /* Form */
+        .contact-form {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(226, 232, 240, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem;
+            background: var(--color-bg);
+            border: 1px solid rgba(226, 232, 240, 0.1);
+            border-radius: var(--radius);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-surface);
+            border-top: 1px solid rgba(226, 232, 240, 0.1);
+            padding: 3rem 0 1.5rem;
+            margin-top: var(--section-padding);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(226, 232, 240, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(226, 232, 240, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(226, 232, 240, 0.1);
+            text-align: center;
+            color: rgba(226, 232, 240, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float::before {
+            content: '💬';
+            font-size: 1.75rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 767px) {
+            .split-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Dark overlay for mobile menu */
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">Δ</span>
+                <span>DELTA GAS</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Choose Us</a></li>
+                <li><a href="#safety">Safety</a></li>
+                <li><a href="#areas">Coverage</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="btn btn-primary">Request Quote</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="#why-us" onclick="toggleMenu()">Why Choose Us</a></li>
+            <li><a href="#safety" onclick="toggleMenu()">Safety</a></li>
+            <li><a href="#areas" onclick="toggleMenu()">Coverage</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li><a href="#contact" class="btn btn-primary" onclick="toggleMenu()">Request Quote</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Modern LPG gas distribution facility" loading="lazy">
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tagline">Licensed & DPR Certified</span>
+                <h1 class="hero-title">Powering Delta State with Reliable, Safe Gas Solutions</h1>
+                <p class="hero-description">Welcome to Delta Gas Downstream Services – your trusted partner in gas distribution across Delta State. For over a decade, we've powered homes, businesses, and industries with safe, reliable LPG and downstream gas solutions. From refilling to bulk supply, we deliver excellence at every point. Licensed, certified, and committed to your safety. Experience gas distribution done right.</p>
+                <div class="hero-cta">
+                    <a href="#services" class="btn btn-primary">Learn More</a>
+                    <a href="#contact" class="btn btn-outline">Request Quote</a>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">10+</div>
+                        <div class="stat-label">Years of Safe Operations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">200+</div>
+                        <div class="stat-label">Active Commercial Clients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">150+</div>
+                        <div class="stat-label">Daily Deliveries Across Delta</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">DPR Safety Compliance Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Our Services</div>
+                <h2>Comprehensive Gas Solutions</h2>
+                <p>Delta Gas Downstream Services offers comprehensive gas solutions tailored to meet residential, commercial, and industrial needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Residential LPG Refilling</h3>
+                    <p class="service-description">Quick turnaround cylinder refilling service for households. All sizes available from 3kg to 12.5kg with same-day service across Warri and Effurun.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3 class="service-title">Commercial Bulk Supply</h3>
+                    <p class="service-description">Dedicated delivery for hotels, restaurants, and businesses. Flexible scheduling, volume discounts, and monthly billing options available.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏭</div>
+                    <h3 class="service-title">Industrial Gas Distribution</h3>
+                    <p class="service-description">Large-scale supply for manufacturing and processing plants. Bulk storage installation and technical support included.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚨</div>
+                    <h3 class="service-title">24/7 Emergency Delivery</h3>
+                    <p class="service-description">Round-the-clock emergency response team. Because gas safety and supply never sleep – we're always ready.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3 class="service-title">Free Safety Inspections</h3>
+                    <p class="service-description">Complimentary safety audits for commercial clients. Educational materials and proper handling training provided.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3 class="service-title">Technical Support</h3>
+                    <p class="service-description">Expert consultation on gas system optimization, combustion efficiency analysis, and equipment conversion services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-image">
+                    <img src="https://images.pexels.com/photos/6699403/pexels-photo-6699403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Professional gas delivery truck with safety equipment" loading="lazy">
+                </div>
+                <div class="split-content">
+                    <div class="section-subtitle">Why Choose Delta Gas</div>
+                    <h2>Safety, Reliability, Excellence</h2>
+                    <p>Safety is our foundation. Every technician is DPR-certified, every delivery vehicle is maintained to highest standards, and every cylinder undergoes rigorous inspection. We operate 24/7 emergency response because gas safety never sleeps.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>DPR Certified Operations</h4>
+                                <p>Fully licensed with all regulatory compliance. Every team member holds current safety certifications.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Strategic Location</h4>
+                                <p>Based in Effurun for rapid delivery across Uvwie, Warri, and surrounding communities.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Transparent Pricing</h4>
+                                <p>No hidden fees. Volume discounts and loyalty rewards for regular customers.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Consistent Supply</h4>
+                                <p>Partnerships with major upstream suppliers guarantee availability even during peak demand.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section id="safety" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Safety & Compliance</div>
+                <h2>Safety Isn't Negotiable – It's Our Culture</h2>
+                <p>At Delta Gas Downstream Services, safety isn't negotiable – it's our culture. We maintain full DPR licensing and adhere strictly to petroleum industry safety standards.</p>
+            </div>
+            <div class="split-section">
+                <div class="split-content">
+                    <h3>Modern Safety Infrastructure</h3>
+                    <p>Our facility features state-of-the-art fire suppression systems, advanced leak detection technology, and controlled access zones. Every piece of equipment undergoes regular maintenance and safety audits.</p>
+                    <h3>Continuous Training</h3>
+                    <p>Every employee undergoes quarterly safety training and certification renewal. We don't just meet safety standards – we exceed them. Our team coordinates with local fire services and emergency responders.</p>
+                    <h3>Client Safety Education</h3>
+                    <p>We conduct free safety audits for commercial clients and provide comprehensive educational materials on proper gas handling, storage, and emergency procedures.</p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Request Safety Audit</a>
+                </div>
+                <div class="split-image">
+                    <img src="https://images.pexels.com/photos/37352142/pexels-photo-37352142.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Safety equipment and fire suppression systems" loading="lazy">
+                </div>
+            </div>
+            <div class="certifications-grid">
+                <div class="cert-badge">
+                    <div class="cert-logo">DPR</div>
+                    <div class="cert-name">DPR Licensed</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-logo">ISO</div>
+                    <div class="cert-name">ISO Certified</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-logo">N</div>
+                    <div class="cert-name">NCDMB</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-logo">S</div>
+                    <div class="cert-name">Safety Council</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section id="areas">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Service Coverage</div>
+                <h2>Delivering Across Delta State</h2>
+                <p>From our strategic Effurun hub, we deliver across Delta State's industrial corridor.</p>
+            </div>
+            <div class="split-section">
+                <div class="split-image">
+                    <img src="https://images.pexels.com/photos/11328705/pexels-photo-11328705.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Distribution network and logistics" loading="lazy">
+                </div>
+                <div class="split-content">
+                    <h3>Primary Coverage Areas</h3>
+                    <p><strong>Same-Day Delivery:</strong> Uvwie, Warri, Effurun – Order before 2PM for same-day service</p>
+                    <p><strong>Next-Day Delivery:</strong> Sapele, Ughelli, Abraka, Agbor, Asaba – Scheduled deliveries available</p>
+                    <p><strong>Bulk Industrial:</strong> Port Harcourt and Benin City – Dedicated supply chains for high-volume clients</p>
+                    <h3>Expanding Network</h3>
+                    <p>Our growing network of retail partners extends our reach to communities throughout the Niger Delta. Whether you need a single cylinder or bulk supply contracts, Delta Gas delivers reliably and safely.</p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Check Your Area</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industrial Solutions Section -->
+    <section id="industrial" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Industrial & Commercial Solutions</div>
+                <h2>Powering Delta State's Industries</h2>
+                <p>Delta Gas powers Delta State's industries with reliable, consistent LPG supply solutions tailored for high-volume operations.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏭</div>
+                    <h3>Manufacturing Plants</h3>
+                    <p>Consistent thermal energy supply for production facilities. Scheduled deliveries, volume discounts, and technical support included.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏨</div>
+                    <h3>Hotels & Hospitality</h3>
+                    <p>Reliable kitchen gas for hotels, restaurants, and catering services. Flexible delivery schedules and monthly billing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Power Generation</h3>
+                    <p>Bulk LPG supply for generators and power facilities. Uninterrupted supply contracts with dedicated account managers.</p>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3>Industrial Client Benefits</h3>
+                <div class="features-list" style="max-width: 800px; margin: 2rem auto;">
+                    <div class="feature-item">
+                        <div class="feature-icon">📅</div>
+                        <div class="feature-text">
+                            <h4>Scheduled Deliveries</h4>
+                            <p>Never run out. Automatic refills based on your consumption patterns.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-text">
+                            <h4>Volume Discounts</h4>
+                            <p>Competitive pricing tiers for high-volume users. Customized billing cycles.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔧</div>
+                        <div class="feature-text">
+                            <h4>Technical Support</h4>
+                            <p>Bulk tank installation, combustion efficiency analysis, and equipment conversion.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Request Industrial Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Client Testimonials</div>
+                <h2>Trusted by Businesses Across Delta State</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Delta Gas has been supplying our hotel for five years – never missed a delivery, never compromised on safety. Professional team!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">GR</div>
+                        <div class="author-info">
+                            <h5>Grand Resort Hotel</h5>
+                            <p>Warri, Delta State</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">As a manufacturing plant, consistent gas supply is critical. Delta Gas understands this. Their bulk supply contract has eliminated our downtime.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DS</div>
+                        <div class="author-info">
+                            <h5>Delta Steel Processing Ltd</h5>
+                            <p>Ughelli, Delta State</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">I've used many gas suppliers, but Delta Gas's safety standards and customer service are unmatched. They even did a free safety check of my restaurant's gas installation.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CE</div>
+                        <div class="author-info">
+                            <h5>Chef Emeka</h5>
+                            <p>Restaurant Owner, Effurun</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Get Gas Delivered Today</div>
+                <h2>Need Gas? We're Ready</h2>
+                <p>Call us now for same-day delivery across Uvwie and Warri. Our customer service team is available 24/7 for orders, inquiries, and emergency response.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+2348031234582">+234 803 123 4582</a></p>
+                            <p style="font-size: 0.85rem; margin-top: 0.5rem;">24/7 Emergency & Orders</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/2348031234582" target="_blank">Message Us Instantly</a></p>
+                            <p style="font-size: 0.85rem; margin-top: 0.5rem;">Fast quotes and order tracking</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@delta-gas-downstream-services.ng">info@delta-gas-downstream-services.ng</a></p>
+                            <p style="font-size: 0.85rem; margin-top: 0.5rem;">Business inquiries and contracts</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Visit Our Facility</h4>
+                            <p>4 Petroleum Road, Effurun<br>Uvwie, Delta State, Nigeria</p>
+                            <p style="font-size: 0.85rem; margin-top: 0.5rem;">Mon-Sat: 7AM-7PM | 24/7 Emergency</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 1.5rem;">Request a Quote</h3>
+                    <form>
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <input type="text" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" required placeholder="+234 xxx xxx xxxx">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Service Type *</label>
+                            <select required>
+                                <option value="">Select service...</option>
+                                <option value="residential">Residential Cylinder Refill</option>
+                                <option value="commercial">Commercial Bulk Supply</option>
+                                <option value="industrial">Industrial Distribution</option>
+                                <option value="emergency">Emergency Delivery</option>
+                                <option value="consultation">Technical Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Details</label>
+                            <textarea placeholder="Tell us about your gas supply needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Delta Gas Downstream Services</h3>
+                    <p>Licensed by DPR | Powering Delta State Since 2013</p>
+                    <p style="margin-top: 1rem;">Powering Delta State with Reliable, Safe Gas Solutions</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">in</a>
+                        <a href="https://wa.me/2348031234582" class="social-icon" target="_blank">W</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Residential LPG Refilling</a></li>
+                        <li><a href="#services">Commercial Bulk Supply</a></li>
+                        <li><a href="#industrial">Industrial Distribution</a></li>
+                        <li><a href="#services">24/7 Emergency Delivery</a></li>
+                        <li><a href="#safety">Safety Inspections</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#safety">Safety & Compliance</a></li>
+                        <li><a href="#areas">Service Areas</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><strong>Phone:</strong><br><a href="tel:+2348031234582">+234 803 123 4582</a></p>
+                    <p style="margin-top: 1rem;"><strong>Address:</strong><br>4 Petroleum Road, Effurun<br>Uvwie, Delta State, Nigeria</p>
+                    <p style="margin-top: 1rem;"><strong>Hours:</strong><br>Office: Mon-Sat 7AM-7PM<br>Emergency: 24/7</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Delta Gas Downstream Services &middot; All rights reserved &middot; Licensed & DPR Certified</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/2348031234582" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"></a>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const menuOverlay = document.querySelector('.menu-overlay');
+            mobileMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add active state to nav on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Form submission handling
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your request! We will contact you within 30 minutes during business hours or first thing the next business day.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
